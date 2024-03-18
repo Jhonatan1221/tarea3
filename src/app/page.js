@@ -20,7 +20,7 @@ const CRUDExample = () => {
       const response = await axios.get('https://jsonplaceholder.typicode.com/users');
       setUsers(response.data);
     } catch (error) {
-      console.error('Error fetching users: ', error);
+      console.error('Error: ', error);
     }
   };
 
@@ -31,7 +31,7 @@ const CRUDExample = () => {
       setUsers([...users, response.data]);
       setFormData({ name: '', email: '', phone: '' });
     } catch (error) {
-      console.error('Error creating user: ', error);
+      console.error('Error: ', error);
     }
   };
 
@@ -41,7 +41,7 @@ const CRUDExample = () => {
       const updatedUsers = users.map(user => user.id === userId ? { ...user, ...newData } : user);
       setUsers(updatedUsers);
     } catch (error) {
-      console.error('Error updating user: ', error);
+      console.error('Error: ', error);
     }
   };
 
@@ -51,7 +51,7 @@ const CRUDExample = () => {
       const updatedUsers = users.filter(user => user.id !== userId);
       setUsers(updatedUsers);
     } catch (error) {
-      console.error('Error deleting user: ', error);
+      console.error('Error: ', error);
     }
   };
 
